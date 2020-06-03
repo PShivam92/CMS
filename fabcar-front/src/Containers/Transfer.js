@@ -46,17 +46,17 @@ class Transfer extends React.Component {
     return (
       <form className="Main-inside" noValidate autoComplete="off">
      <Typography  variant="display2">
-      Transfer a car
+      Transfer to Different Department
       </Typography>
       <TextField
-          label="CAR ID"
+          label="EMP ID"
           className={classes.textField}
           value={this.state.name}
           onChange={this.handleChange('ID')}
           margin="normal"
         />
         <TextField
-          label="New Owner"
+          label="New Department"
           className={classes.textField}
           value={this.state.name}
           onChange={this.handleChange('newOwner')}
@@ -65,7 +65,7 @@ class Transfer extends React.Component {
         <Button variant="contained" color="primary" disabled={!this.props.connected} className={classes.button} onClick={this.submitHandler}>
             {this.props.connected ? "TRANSFER" : "DISCONNECTED"}
         </Button>
-        <p>Car ID is case sensitive must be valid</p>
+        <p>EMP ID is case sensitive must be valid</p>
       </form>
       
     );

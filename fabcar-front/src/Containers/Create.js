@@ -38,10 +38,10 @@ class Create extends React.Component {
     //Check form validity
     if (!(this.state.ID && this.state.make && this.state.model && this.state.color && this.state.owner)){
       alert('All fields must be filled in');
-    } else if (this.state.ID.slice(0,3) !== 'CAR') {
-        alert('ID MUST CONTAIN "CAR" FOLLOWED BY ID')
+    } else if (this.state.ID.slice(0,3) !== 'EMP') {
+        alert('ID MUST CONTAIN "EMP" FOLLOWED BY ID')
     } else if (this.state.ID.slice(3).length > 3 || isNaN(this.state.ID.slice(3))) {
-        alert('ID MUST CONTAIN "CAR" FOLLOWED BY ID BETWEEN 0 AND 999')
+        alert('ID MUST CONTAIN "EMP" FOLLOWED BY ID BETWEEN 0 AND 999')
     } else {
       this.props.switchFeedHandler(1)
       this.props.socket.emit('REQUEST', {action: "CREATE", data:this.state})
@@ -54,38 +54,38 @@ class Create extends React.Component {
     return (
       <form className="Main-inside" noValidate autoComplete="off">
         <Typography  variant="display2">
-          Create a car
+          Create a Employee profile
         </Typography>
         <TextField
-          label="CAR ID"
+          label="EMP ID"
           className={classes.textField}
           value={this.state.name}
           onChange={this.handleChange('ID')}
           margin="normal"
         />
         <TextField
-          label="Colour"
+          label="Name"
           className={classes.textField}
           value={this.state.name}
           onChange={this.handleChange('color')}
           margin="normal"
         />
         <TextField
-          label="Make"
+          label="DOB"
           className={classes.textField}
           value={this.state.name}
           onChange={this.handleChange('make')}
           margin="normal"
         />
         <TextField
-          label="Model"
+          label="Designation"
           className={classes.textField}
           value={this.state.name}
           onChange={this.handleChange('model')}
           margin="normal"
         />
         <TextField
-          label="Owner"
+          label="Department"
           className={classes.textField}
           value={this.state.name}
           onChange={this.handleChange('owner')}
@@ -98,7 +98,7 @@ class Create extends React.Component {
                 onClick={this.createHandler}>
            {this.props.connected ? "CREATE" : "DISCONNECTED"}
         </Button>
-        <p>Car ID is case sensitive and should start with 'CAR' followed by digits (e.g. CAR10)</p>
+        <p>EMP ID is case sensitive and should start with 'EMP' followed by digits (e.g. EMP10)</p>
       </form>
       
     );

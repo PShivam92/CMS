@@ -35,7 +35,7 @@ class QueryAll extends React.Component {
     return (
       <div className="Main-inside" >
       <Typography  variant="display2">
-      Query all cars
+      All Employees
       </Typography>
       <br/>
       <br/>

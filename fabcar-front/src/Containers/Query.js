@@ -52,10 +52,10 @@ class Query extends React.Component {
     return (
       <form className="Main-inside">
       <Typography  variant="display2">
-        Query a single car
+        Search a Employee
       </Typography>
         <TextField
-          label="CAR ID"
+          label="EMP ID"
           className={classes.textField}
           value={this.state.ID}
           onChange={this.handleChange('ID')}
@@ -68,7 +68,7 @@ class Query extends React.Component {
         <br/>
         <br/>
         <p >
-        Car ID is case sensitive and should start with 'CAR' followed by digits (e.g. CAR10)
+        EMP ID is case sensitive and should start with 'EMP' followed by digits (e.g. EMP10)
         </p>
       </form>
       
